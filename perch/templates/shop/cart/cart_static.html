@@ -1,0 +1,83 @@
+
+
+	<div class="wrapper cols2-nav-right">
+	
+		<div class="primary-content">
+
+
+		<table class="cart">
+			<tr>
+				<th>Item</th>
+				<th>Quantity</th>
+<!-- 				<th>Price</th> -->
+				<th>Total</th>
+			</tr>
+			<perch:cartitems>
+				<tr>
+					<td>
+						<b><perch:cartitem id="title" /></b>
+						<p><i><perch:cartitem id="variant_desc" /></i></p>
+						<perch:cartitem id="image" type="image" width="100" height="100" density="1.6" crop="true" output="tag" />
+					</td>
+					<td><perch:cartitem id="quantity" /></td>
+<!-- 					<td class="money"><perch:cartitem id="price_without_tax" format="$:%.2n" /></td> -->
+					<td class="money"><perch:cartitem id="total_without_tax" format="$:%.2n" /></td>
+				</tr>
+			</perch:cartitems>
+
+			<perch:if id="total_discounts" match="gt" value="0.00">
+				<tr class="total">
+					<th colspan="2">
+						Discount (<perch:shop id="discount_code" />)
+					</th>
+					<td class="money">
+						<perch:shop id="total_discounts_formatted" />
+					</td>
+				</tr>
+				<tr class="total">
+					<th colspan="2">
+						Total
+					</th>
+					<td class="money">
+						<perch:shop id="total_items_discounted_formatted" />
+					</td>
+				</tr>
+			<perch:else />
+				<tr class="total">
+					<th colspan="2">
+						Total
+					</th>
+					<td class="money">
+						<perch:shop id="total_items_formatted" />
+					</td>
+				</tr>
+			</perch:if>
+			<tr>
+				<th colspan="2">
+					Shipping
+				</th>
+				<td class="money">
+					<perch:shop id="total_shipping_formatted" />
+				</td>
+			</tr>
+<!--
+			<tr class="total">
+				<th colspan="5">
+					Tax
+				</th>
+				<td class="money">
+					<perch:shop id="total_tax_formatted" />
+				</td>
+			</tr>
+-->
+			<tr class="total">
+				<th colspan="2">
+					Grand total
+				</th>
+				<td class="money">
+					<perch:shop id="grand_total_formatted" />
+				</td>
+			</tr>
+		</table>
+</div>
+</div>

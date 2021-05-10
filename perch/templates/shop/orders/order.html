@@ -1,0 +1,71 @@
+<perch:shop id="orderCreated" type="date" format="d F Y H:i" />
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total</th>
+  </tr>
+</perch:before>
+    <perch:orderitems>
+      <tr>
+            <td>
+              <perch:orderitem id="title" type="hidden" /> <small><perch:orderitem id="variant_desc" type="hidden" /></small>
+            </td>
+            <td>
+                <perch:orderitem id="quantity" type="hidden" />
+            </td>
+            <td align="right">
+              <perch:orderitem id="price_with_tax" type="hidden" format="$:%.2n" />
+            </td>
+            <td align="right">
+              <perch:orderitem id="total_with_tax" type="hidden" format="$:%.2n" />
+            </td>
+        </tr>
+    </perch:orderitems>
+    <perch:if id="total_discounts" match="gt" value="0.00">
+		<tr class="total">
+			<th colspan="3">
+				Discount (<perch:shop id="discount_code" />)
+			</th>
+			<td class="money" align="right">
+				<perch:shop id="total_discounts_with_tax_formatted" />
+			</td>
+		</tr>
+		<tr class="total">
+			<th colspan="3">
+				Total
+			</th>
+			<td class="money" align="right">
+				<perch:shop id="total_items_discounted_with_tax_formatted" />
+			</td>
+		</tr>
+	<perch:else />
+		<tr class="total">
+			<th colspan="3">
+				Total
+			</th>
+			<td class="money" align="right">
+				<perch:shop id="total_items_formatted" />
+			</td>
+		</tr>
+	</perch:if>
+		<tr class="total">
+			<th colspan="3">
+				VAT
+			</th>
+			<td class="money" align="right">
+				<perch:shop id="total_tax_formatted" />
+			</td>
+		</tr>	
+		<tr class="total">
+			<th colspan="3">
+				Grand Total
+			</th>
+			<td class="money" align="right">
+				<perch:shop id="total_items_discounted_with_tax_formatted" />
+			</td>
+		</tr>
+<perch:after>
+</table>
+</perch:after>

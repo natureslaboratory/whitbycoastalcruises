@@ -1,0 +1,131 @@
+<perch:blocks>
+	<perch:block type="hero" label="Hero">
+		<div class="hero" style="background:url('<perch:content type="image" width="1920" height="600" crop="true" id="image" label="Image">');background-size:cover;background-position: center center;">
+			<div class="restrict">
+				<h2>Coastal<br /><em>Sea Fishing</em></h2>
+				<h3>Fishing Trips from Whitby Harbour</h3>
+			</div>
+			<img src="/assets/images/wave.png" alt="Wave" class="wave" />
+		</div>
+	</perch:block>
+	<perch:block type="herointernal" label="Hero Internal">
+		<div class="hero internal" style="background:url('<perch:content type="image" width="1920" height="300" crop="true" id="image" label="Image">');background-size:cover;background-position: center center;">
+			<div class="restrict">
+				<h1><perch:content type="text" id="heading" label="Heading" /></h1>
+			</div>
+		</div>
+	</perch:block>
+	<perch:block type="cards" label="Cards">
+		<div class="cards <perch:content type="select" options="background-primary,background-secondary,background-white" id="colour" label="Background Colour">">
+			<div class="restrict">
+				<perch:repeater id="cards" label="Cards">
+				<div class="card">
+					<perch:if exists="sticker"><p class="sticker"><perch:content type="text" id="sticker" label="Sticker" /></p></perch:if>
+					<perch:if exists="image"><img src="<perch:content type="image" width="600" height="400" crop="true" label="Image" id="image" />" alt="<perch:content type="text" id="alt" label="Alt Text" />" /></perch:if>
+					<div>
+					<perch:content type="textarea" label="Text" editor="redactor" html id="text" />
+					<perch:if exists="button"><a href="<perch:content type="text" id="buttonurl" label="Button URL" />" class="button"><perch:content type="text" id="button" label="Button Text" /></a></perch:if>
+					</div>
+				</div>
+				</perch:repeater>
+			</div>
+		</div>
+	</perch:block>
+	<perch:block type="testimonial" label="Testimonial">
+		<div class="testimonial" style="background:url('<perch:content type="image" width="1920" height="600" crop="true" id="image" label="Image">');background-size:cover;background-position: center center;">
+			<div class="restrict">
+				<q><perch:content type="text" id="quote" label="Quote" /></q>
+				<cite><perch:content type="text" id="name" label="Name" /></cite>
+			</div>
+		</div>
+	</perch:block>
+	<perch:block type="textcolumns" label="Text Columns">
+		<div class="text-columns background-wave">
+			<div class="restrict">
+				<div class="<perch:content type="select" id="columns" label="Columns" options="no-columns,columns" />">
+				<perch:content type="textarea" id="text" html editor="redactor" label="Text" />
+				</div>
+				<div>
+					<perch:if exists="image"><img src="<perch:content type="image" width="400" height="400" crop="true" label="Image" id="image" />" alt="<perch:content type="text" id="alt" label="Alt Text" />" /></perch:if>
+				</div>
+			</div>
+			<perch:if exists="wave">
+				<img src="/assets/images/wave-2.png" alt="Wave" class="wave" />
+			</perch:if>
+		</div>
+		<perch:content type="checkbox" id="wave" label="Wave Background?" value="on" suppress="true" />
+	</perch:block>
+	<perch:block type="text" label="Text">
+		<div class="text background-wave">
+			<div class="restrict">
+				<perch:content type="textarea" id="text" label="Text" html editor="redactor" />
+			</div>
+		</div>
+		<perch:content type="checkbox" id="wave" label="Wave Background?" value="on" suppress="true" />
+	</perch:block>
+	<perch:block type="gallery" label="Gallery">
+		<div class="gallery">
+			<ul>
+			<perch:repeater id="images" label="Images">
+				<li><img src="<perch:content type="image" height="500" label="Image" id="image" />" alt="<perch:content type="text" id="alt" label="Alt Text" />" /></li>
+			</perch:repeater>
+			</ul>
+		</div>
+	</perch:block>
+	<perch:block type="split" label="Split">
+		<div class="split">
+			<div class="restrict">
+				<div>
+					<perch:if exists="image"><img src="<perch:content type="image" width="800" label="Image" id="image" />" alt="<perch:content type="text" id="alt" label="Alt Text" />" /></perch:if>
+					<perch:content type="textarea" id="text" label="Text" html editor="redactor" />
+				</div>
+				<div>
+					<perch:if exists="imagetwo"><img src="<perch:content type="image" width="800" label="Image #2" id="imagetwo" />" alt="<perch:content type="text" id="alttwo" label="Alt Text #2" />" /></perch:if>
+					<perch:content type="textarea" id="texttwo" label="Text #2" html editor="redactor" />
+				</div>
+			</div>
+		</div>
+	</perch:block>
+	<perch:block type="cta" label="CTA">
+		<div class="cta <perch:content type="select" options="background-primary,background-secondary,background-white" id="colour" label="Background Colour">">
+			<div class="restrict">
+				<a class="button" href="<perch:content type="text" id="url" label="Button URL" />"><perch:content type="text" id="button" label="Button Text" /></a>
+			</div>
+		</div>
+	</perch:block>
+	<perch:block type="contact" label="Contact">
+		<div class="split">
+			<div class="restrict">
+				<div>
+					<perch:content type="textarea" id="text" label="Text" html editor="redactor" />
+				</div>
+				<div>
+					<perch:form id="contact" method="post" app="perch_forms" class="contact">
+						<div class="form-section">
+							<div class="form-input">
+								<label for="name">Name</label>
+								<perch:input type="text" id="name" required label="Name" placeholder="Your Name" />
+							</div>
+							<div class="form-input">
+								<label for="email">Email</label>
+								<perch:input type="email" id="email" required label="Email" placeholder="you@company.com" />
+							</div>
+							<div class="form-input">
+								<label for="message">Message</label>
+								<perch:input type="textarea" id="message" required label="Message" placeholder="Message" />
+							</div>
+							<div class="form-input">
+								<perch:input type="submit" id="submit" value="Send" class="form-button" />
+							</div>
+						</div>
+						<perch:success>
+							<p class="success">
+								<perch:content id="success" type="text" label="Thank you message" />
+							</p>
+						</perch:success>
+					</perch:form>
+				</div>
+			</div>
+		</div>
+	</perch:block>
+</perch:blocks>

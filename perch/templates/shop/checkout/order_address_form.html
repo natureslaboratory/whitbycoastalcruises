@@ -1,0 +1,38 @@
+<perch:form id="order_address" method="post" app="perch_shop" action="/shop/checkout/">
+	<p><strong>Shipping address</strong></p>
+
+	<perch:addresses>
+		<address>
+			<label>
+				<perch:input type="radio" id="shipping" value="<perch:address id="addressSlug" />" />
+				<perch:address id="addressFirstName" /> <perch:address id="addressLastName" /><br />
+				<perch:address id="address_1" /> <perch:address id="address_2" /><br />
+				<perch:address id="city" /><br /><perch:address id="county" /><br /><perch:address id="postcode" /><br /><perch:address id="country_name" />
+			</label>
+		</address>
+	</perch:addresses>
+
+
+	<p><strong>Billing address</strong></p>
+
+	<perch:addresses>
+		<address>
+			<label>
+				<perch:input type="radio" id="billing" value="<perch:address id="addressSlug" />" />
+				<perch:address id="addressFirstName" /> <perch:address id="addressLastName" /><br />
+				<perch:address id="address_1" /> <perch:address id="address_2" /><br />
+				<perch:address id="city" /><br /><perch:address id="county" /><br /><perch:address id="postcode" /><br /><perch:address id="country_name" />
+			</label>
+		</address>
+	</perch:addresses>
+
+
+	<div>
+		<perch:input type="submit" id="submit" value="Ok" />
+		<perch:input type="hidden" id="r" />
+	</div>
+
+</perch:form>
+
+
+
