@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/whitbycruises
+    - /bin/cp -R * $DEPLOYPATH
