@@ -183,7 +183,7 @@ a.button,input[type=submit]{
 	box-shadow: var(--shadow);
 	text-shadow: var(--textshadow);
 	padding:1rem 2rem;
-	border:1px solid #66c5e2;
+	border:1px solid #b0990e;
 	border-radius: var(--radius);
 	text-align: center;
 	font-size:1rem;
