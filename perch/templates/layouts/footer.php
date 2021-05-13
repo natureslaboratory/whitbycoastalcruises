@@ -1,7 +1,7 @@
 	<footer class="background-primary">
 		<div class="restrict">
 			<p>Whitby Coastal Cruises Ltd, 16 Westcliff Avenue, Whitby, North Yorkshire, YO21 3JB<br />Whitby Coastal Fishing is Owned and Operated by Whitby Coastal Cruises</p>
-			<p>&copy; Whitby Coastal Cruises <?php echo date('Y'); ?> &bull; <a href="/privacy/">Privacy Policy</a> &bull; <a href="/book-online/">Cancellation Policy</a></p>
+			<p>&copy; Whitby Coastal Cruises <?php echo date('Y'); ?> &bull; <a href="/privacy/">Privacy Policy</a></p>
 		</div>
 	</footer>
 	
