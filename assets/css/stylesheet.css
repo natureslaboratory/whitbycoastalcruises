@@ -193,6 +193,7 @@ a.button,input[type=submit]{
 
 a.button:hover,input[type=submit]:hover{
 	background:var(--primary);
+	color:#fff;
 }
 
 header a.button{
