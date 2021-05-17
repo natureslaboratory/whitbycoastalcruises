@@ -1,40 +1,55 @@
-<div class="book">
+<div class="book" style="background:#fff !important;height:100vh;">
 	<div class="restrict">
-		<section>
-		<h2><perch:shop id="title" type="text" label="Title"/></h2>
-		<perch:shop id="description" type="textarea" label="Description" editor="redactor" html />
-		
-		<p>&pound;30 for Adults &bull; &pound;25 for Children</p>
-		
-		<perch:form id="add_to_cart" app="perch_shop" action="/shop/cart/">
-		
-			<perch:if exists="has_variants">
-		      <perch:productopts>
-		        <h3><perch:productopt id="title"></h3>
-		        <perch:productvalues>
-		          <perch:before><ul class="options"></perch:before>
-		            <li>
-		              <label>
-		                <perch:input id="options" name="opt-<perch:productvalue id="optionID">[]"
-		                  value="<perch:productvalue id="valueID">" type="radio" required="required">
-		                <perch:productvalue id="valueTitle">
-		              </label>
-		            </li>
-		          <perch:after></ul></perch:after>
-		        </perch:productvalues>
-		      </perch:productopts>
-		    </perch:if>
-		
-			<perch:input id="product" type="hidden" env-autofill="false" value="<perch:shop id="productID" type="hidden" env-autofill="false" />" />
-			<perch:if id="stock_level" value="0" match="gt">
-				<h3>Quantity</h3>
-				<perch:input id="qty" value="1" type="number" min="0" placeholder="1" />
-				<perch:input type="submit" value="Add to Cart" />
+		<div class="container">
+			<h2><perch:shop id="title" type="text" label="Title"/></h2>
+			<perch:shop id="description" type="textarea" label="Description" editor="redactor" html />
+			<p><strong>Remaining Seats:</strong> <perch:shop id="stock_level" /></p>
+<!--
+			<p><strong>Price</strong></p>
+			<perch:if id="on_sale" value="1">
+				<p class="price sale"><perch:shop id="sale_price" type="shop_currency_value" /></p>
 			<perch:else />
-				<h2>Sorry, sold out!</h2>
+				<p class="price"><perch:shop id="price" type="shop_currency_value" label="Price" divider-before="Pricing" size="s" min="0" step="any" /></p>	
 			</perch:if>
-		</perch:form>
-		<p>&nbsp;</p>
-		</section>
+-->
+			
+			<perch:form id="add_to_cart" app="perch_shop" action="/shop/cart/">
+				<perch:if exists="has_variants">
+				  <perch:productopts>
+				    <h3><perch:productopt id="title" /></h3>
+				    <perch:productvalues>
+				      <perch:before><ul></perch:before>
+				        <li>
+				          <label>
+				            <perch:input id="options" name="opt-<perch:productvalue id="optionID">[]" value="<perch:productvalue id="valueID">" type="radio" required="required">
+				            <perch:productvalue id="valueTitle" />
+				            <perch:productvalue id="price" />
+				          </label>
+				        </li>
+				      <perch:after></ul></perch:after>
+				    </perch:productvalues>
+				  </perch:productopts>
+				</perch:if>
+<!-- 				<h4><perch:shop id="price" type="shop_currency_value" label="Price" divider-before="Pricing" size="m" min="0" step="any" /></h4> -->
+				<perch:if id="stock_level" value="0">
+					<p><strong>Sorry, out of stock!</strong></p>
+				<perch:else/>
+					<label>Quantity</label>
+					<perch:input type="number" id="qty" value="1" /><br /><br />
+					<label>Add to Cart &amp; Checkout</label>
+					<perch:input id="product" type="hidden" value="<perch:shop id="productID" type="hidden" env-autofill="false" />" />
+					<perch:input type="submit" value="Add to cart" />
+				</perch:if>
+			</perch:form>
+			
+			<img src="<perch:shop id="image" type="image" width="800" height="800" crop="true" />">
+			
+			<perch:if exists="longdescription">
+			<div class="long-desc">
+				<perch:shop id="longdescription" html />
+			</div>
+			</perch:if>
+			<p>&nbsp;</p>
+		</div>	
 	</div>
 </div>
