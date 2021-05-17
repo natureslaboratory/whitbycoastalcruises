@@ -92,7 +92,7 @@
 				// Gateway URL
 				 
 				$url = 'https://gateway.retailmerchantservices.co.uk/paymentform/'; 
-				
+				echo $cart['grand_total'];
 				if (!isset($_POST['responseCode'])) {
 					// Send request to gateway
 					// Request
@@ -105,7 +105,7 @@
 						'customerPostcode' => $addresses['postcode'],
 						'countryCode' => 826, 
 						'currencyCody' => 826,
-						'amount' => $cart['grand_total']*10,
+						'amount' => $cart['grand_total']*100,
 						'orderRef' => 'Whitby Fishing Boat Trip',
 						'transactionUnique' => uniqid(),
 						'redirectURL' => 'https://whitbycoastalcruises.com/shop/endpoint/',
