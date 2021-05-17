@@ -108,7 +108,7 @@
 						'amount' => $cart['grand_total']*10,
 						'orderRef' => 'Whitby Fishing Boat Trip',
 						'transactionUnique' => uniqid(),
-						'redirectURL' => 'https://whitbycoastalfishing.co.uk/shop/endpoint/',
+						'redirectURL' => 'https://whitbycoastalcruises.com/shop/endpoint/',
 					);
 					// Create the signature using the function called below.
 					$req['signature'] = createSignature($req, $key);
