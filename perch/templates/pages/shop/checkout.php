@@ -92,7 +92,7 @@
 				// Gateway URL
 				 
 				$url = 'https://gateway.retailmerchantservices.co.uk/paymentform/'; 
-				echo $cart['grand_total'];
+	
 				if (!isset($_POST['responseCode'])) {
 					// Send request to gateway
 					// Request
