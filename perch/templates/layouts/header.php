@@ -23,8 +23,7 @@
 				<?php perch_pages_navigation(); ?>
 			</nav>
 			<div>
-				<p><a href="/shop/cart" class="cart"><?php perch_shop_cart_total(); ?></a>
-				<?php if(perch_member_logged_in()){echo '<a class="cart" href="/account">Account</a> <a class="cart" href="/account/logout">Logout</a>';}?></p>
+				
 			</div>
 		</div>
 	</header>
