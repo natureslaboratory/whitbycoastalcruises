@@ -9,7 +9,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
 	<link href="/assets/css/stylesheet.css?v=<?php echo rand(); ?>" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" href="/fullcalendar/lib/main.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/fullcalendar/lib/main.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="/perch/addons/apps/simple_tickets/files/moment.js"></script>
 	<script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
@@ -22,8 +28,10 @@
 				<a class="menu button">&#8801; Menu</a>
 				<?php perch_pages_navigation(); ?>
 			</nav>
+<!--
 			<div>
 				
 			</div>
+-->
 		</div>
 	</header>
