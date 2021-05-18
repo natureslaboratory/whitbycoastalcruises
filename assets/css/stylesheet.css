@@ -746,3 +746,11 @@ p.error{
 	color:#fff;
 	padding:0.5rem;	
 }
+
+.book .restrict{
+	max-width:1280px;
+}
+
+button.fc-today-button{
+	display:none !important;
+}
