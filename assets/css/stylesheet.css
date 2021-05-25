@@ -757,4 +757,6 @@ table.fc-scrollgrid-sync-table{
 	margin-top:0px;
 }
 
-tr:nth-ch
+.fc-col-header{
+	margin:0px;
+}
